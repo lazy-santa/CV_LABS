@@ -12,9 +12,9 @@
 
 ### Исходные изображения: 
 
-![photo_1.jpg](photo_1.jpg)
-![photo_2.jpg](photo_1.jpg)
-![photo_3.jpg](photo_1.jpg)
+![Без имени](https://github.com/user-attachments/assets/e45096fb-879d-4e54-a048-8f7d991b5e5e)
+![Без имени-1](https://github.com/user-attachments/assets/a1c43bfa-ec4c-4c38-9bf5-95d990f199de)
+![Без имени](https://github.com/user-attachments/assets/2a984e22-c906-4711-bd39-d6663b3144a4)
 
 *Для ускорения вычислений размер исходных изображений был уменьшен до (600, 800), для этого был использован метод cv2.resize().
 **Исходные изображения были переведены в оттенки серого, для этого был использован метод cv2.cvtColor(image, cv2.COLOR_RGB2GRAY).
