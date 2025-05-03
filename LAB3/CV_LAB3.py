@@ -11,24 +11,26 @@ if not cap.isOpened():
     print("Ошибка: Не удалось открыть видеофайл.")
     exit()
 
+# Получаем размеры кадра и FPS 
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)) // 2
 frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) // 2
 fps = int(cap.get(cv2.CAP_PROP_FPS))
+
+# Создаем объект для записи видео
 fourcc = cv2.VideoWriter_fourcc(*'MP4V')
 out = cv2.VideoWriter('output.mp4', fourcc, fps, (frame_width, frame_height))
 
+# Инициализируем переменные для фона и порога
 background = None
 threshold_background_difference = 100  # Порог для разницы между фоном и текущим кадром
 
+# Начинаем отсчет времени
 start_time = time()
-
 
 # Читаем и обрабатываем кадры
 while cap.isOpened():
 
     ret, frame = cap.read()  # чтение кадра из видео
-
-
 
     if not ret:
         print('Видео не загрузилось, либо закончилось')
@@ -47,8 +49,6 @@ while cap.isOpened():
     elif time() - start_time < 10:
         background = np.add(background, cv2.convertScaleAbs(np.subtract(background, frame), alpha=0.01, beta=0))
 
-    cv2.imshow('Background', background)  # Показываем текущий фон
-
     # Вычисляем разницу между фоном и текущим кадром
     difference = np.abs(np.subtract(background, frame))
     print(difference)
@@ -61,8 +61,6 @@ while cap.isOpened():
     mask = cv2.erode(mask, kernel=(5, 5), iterations=3)  # Эрозия
     mask = cv2.erode(mask, kernel=(3, 3), iterations=3)  # Эрозия
     mask = cv2.dilate(mask, kernel=(5, 5), iterations=3)  # Дилатация
-
-    cv2.imshow('Mask', mask)  # Показываем маску
 
     # Находим контуры на маске
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
