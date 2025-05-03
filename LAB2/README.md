@@ -63,7 +63,8 @@
 - Чувствителен к масштабированию  (углы могут исчезать при изменении масштаба)    
 
 ### Результат работы детектора Харриса
-![Без имени](https://github.com/user-attachments/assets/efb7a3ee-a2de-4a14-a509-c2157a36c056)
+<img src="https://github.com/user-attachments/assets/efb7a3ee-a2de-4a14-a509-c2157a36c056" width="400" />
+<img src="https://github.com/user-attachments/assets/06538a98-bc94-4929-ae2b-405ef56f5bc0" width="400" />
 
 ## Дескриптор SIFT
 
@@ -103,7 +104,7 @@ SIFT (Scale-Invariant Feature Transform)  — это алгоритм компь
 
 ### Результат сопоставления точек (точки соединены прямыми):
 
-![match_draw.png](match_draw.png)
+<img src="https://github.com/user-attachments/assets/5a420a53-a84f-44b3-8ab2-244aba061681" width="800" />
 
 ## Оценка трансформаций
 
@@ -118,4 +119,4 @@ SIFT (Scale-Invariant Feature Transform)  — это алгоритм компь
   - В правом столбце записываем вектор сдвига
 
 ### Траектория движения камеры
-![trajectory.png](trajectory.png)
+<img src="https://github.com/user-attachments/assets/1cfd1f9f-5b0c-4b25-ac5d-6b3cd7b9edb2" width="500" />
